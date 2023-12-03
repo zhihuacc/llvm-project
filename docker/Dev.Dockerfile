@@ -10,7 +10,7 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 EXPOSE 22
 
-RUN apt-get update && apt-get install -y vim g++ gdb cmake linux-tools-common linux-tools-generic \
+RUN apt-get update && apt-get install -y vim g++ gdb clang lld cmake ninja-build linux-tools-common linux-tools-generic \
     && apt-get install -y libssl-dev libgflags-dev libgoogle-glog-dev libprotobuf-dev libprotoc-dev protobuf-compiler libleveldb-dev \
     && apt-get install -y libgoogle-perftools-dev
 
